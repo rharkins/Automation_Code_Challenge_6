@@ -5,6 +5,7 @@ package com.stgconsulting;
         import org.openqa.selenium.firefox.FirefoxBinary;
         import org.openqa.selenium.firefox.FirefoxDriver;
         import org.openqa.selenium.firefox.FirefoxProfile;
+        import org.openqa.selenium.htmlunit.HtmlUnitDriver;
         import org.testng.annotations.BeforeClass;
 
         import java.io.BufferedWriter;
@@ -65,18 +66,21 @@ public class SeleniumWebdriverBaseClass
         //driver = new FirefoxDriver();
 
         // Chromedriver settings
-        File file = new File("C:\\ChromeDriver\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
-        driver = new ChromeDriver();
+//        File file = new File("C:\\ChromeDriver\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
+//        driver = new ChromeDriver();
+
+        // HtmlUnitDriver settings
+        driver = new HtmlUnitDriver();
 
         // Set all new windows to maximize
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         // Set an implicit wait of 60 seconds to handle delays in loading and finding elements
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     public BufferedWriter createOutputFile() throws IOException {
-        File outputFile = new File("C:/test/automation_code_challenge_5_output.txt");
+        File outputFile = new File("C:/test/automation_code_challenge_6_multithread_output.txt");
         // If file doesnt exists, then create it
         if (!outputFile.exists()) {
             outputFile.createNewFile();
